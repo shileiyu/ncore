@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="gtest">
+      <UniqueIdentifier>{b1687820-31aa-4523-a2dc-20b631215869}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="gtest\gtest_main.cc">
+      <Filter>gtest</Filter>
+    </ClCompile>
+    <ClCompile Include="gtest\gtest-all.cc">
+      <Filter>gtest</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore-test\application_unittest.cpp" />
+    <ClCompile Include="ncore-test\atomic_unittest.cpp" />
+    <ClCompile Include="ncore-test\base64_unittest.cpp" />
+    <ClCompile Include="ncore-test\bitconverter_unittest.cpp" />
+    <ClCompile Include="ncore-test\buffer_unittest.cpp" />
+    <ClCompile Include="ncore-test\datetime_unittest.cpp" />
+    <ClCompile Include="ncore-test\exception_unittest.cpp" />
+    <ClCompile Include="ncore-test\file_stream_unittest.cpp" />
+    <ClCompile Include="ncore-test\hash_unittest.cpp" />
+    <ClCompile Include="ncore-test\invoker_unittest.cpp" />
+    <ClCompile Include="ncore-test\logging_unittest.cpp" />
+    <ClCompile Include="ncore-test\named_pipe_unittest.cpp" />
+    <ClCompile Include="ncore-test\period_unittest.cpp" />
+    <ClCompile Include="ncore-test\registry_unittest.cpp" />
+    <ClCompile Include="ncore-test\sink_unittest.cpp" />
+    <ClCompile Include="ncore-test\socket_unittest.cpp" />
+    <ClCompile Include="ncore-test\stream_unittest.cpp" />
+    <ClCompile Include="ncore-test\sys_info_unittest.cpp" />
+    <ClCompile Include="ncore-test\timer_unittest.cpp" />
+    <ClCompile Include="ncore-test\timespan_unittest.cpp" />
+    <ClCompile Include="ncore-test\utf8_unittest.cpp" />
+    <ClCompile Include="ncore-test\path_unittest.cpp" />
+  </ItemGroup>
+</Project>

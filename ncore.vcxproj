@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ncore\algorithm\cityhash.h" />
+    <ClInclude Include="ncore\algorithm\crc.h" />
+    <ClInclude Include="ncore\algorithm\hash.h" />
+    <ClInclude Include="ncore\algorithm\md5.h" />
+    <ClInclude Include="ncore\algorithm\sha1.h" />
+    <ClInclude Include="ncore\base\atomic.h" />
+    <ClInclude Include="ncore\base\object.h" />
+    <ClInclude Include="ncore\base\buffer.h" />
+    <ClInclude Include="ncore\base\datetime.h" />
+    <ClInclude Include="ncore\base\exception.h" />
+    <ClInclude Include="ncore\base\stream.h" />
+    <ClInclude Include="ncore\base\timespan.h" />
+    <ClInclude Include="ncore\encoding\base64.h" />
+    <ClInclude Include="ncore\encoding\utf8.h" />
+    <ClInclude Include="ncore\ncore.h" />
+    <ClInclude Include="ncore\sys\application.h" />
+    <ClInclude Include="ncore\sys\async_context.h" />
+    <ClInclude Include="ncore\sys\background_thread.h" />
+    <ClInclude Include="ncore\sys\directory.h" />
+    <ClInclude Include="ncore\sys\directory_async_event_args.h" />
+    <ClInclude Include="ncore\sys\named_event.h" />
+    <ClInclude Include="ncore\sys\path.h" />
+    <ClInclude Include="ncore\sys\file_mapping.h" />
+    <ClInclude Include="ncore\sys\file_stream.h" />
+    <ClInclude Include="ncore\sys\file_stream_async_event_args.h" />
+    <ClInclude Include="ncore\sys\file_define.h" />
+    <ClInclude Include="ncore\sys\io_portal.h" />
+    <ClInclude Include="ncore\sys\ip_address.h" />
+    <ClInclude Include="ncore\sys\ip_endpoint.h" />
+    <ClInclude Include="ncore\sys\message_loop.h" />
+    <ClInclude Include="ncore\sys\mutex.h" />
+    <ClInclude Include="ncore\sys\named_pipe.h" />
+    <ClInclude Include="ncore\sys\named_pipe_async_event_args.h" />
+    <ClInclude Include="ncore\sys\pipe_define.h" />
+    <ClInclude Include="ncore\sys\options_parser.h" />
+    <ClInclude Include="ncore\sys\proactor.h" />
+    <ClInclude Include="ncore\sys\registry.h" />
+    <ClInclude Include="ncore\sys\semaphore.h" />
+    <ClInclude Include="ncore\sys\socket.h" />
+    <ClInclude Include="ncore\sys\socket_async_event_args.h" />
+    <ClInclude Include="ncore\sys\network_define.h" />
+    <ClInclude Include="ncore\sys\spin_lock.h" />
+    <ClInclude Include="ncore\sys\stop_watch.h" />
+    <ClInclude Include="ncore\sys\sys_info.h" />
+    <ClInclude Include="ncore\sys\thread.h" />
+    <ClInclude Include="ncore\sys\timer.h" />
+    <ClInclude Include="ncore\sys\wait.h" />
+    <ClInclude Include="ncore\sys\waitable.h" />
+    <ClInclude Include="ncore\sys\wait_exception.h" />
+    <ClInclude Include="ncore\utils\bitconverter.h" />
+    <ClInclude Include="ncore\utils\async_result_adapter.h" />
+    <ClInclude Include="ncore\utils\async_result_delegate.h" />
+    <ClInclude Include="ncore\utils\async_result_handler.h" />
+    <ClInclude Include="ncore\utils\bitwise_enum.h" />
+    <ClInclude Include="ncore\utils\handle_pool.h" />
+    <ClInclude Include="ncore\utils\handy.h" />
+    <ClInclude Include="ncore\utils\invoker.h" />
+    <ClInclude Include="ncore\utils\job.h" />
+    <ClInclude Include="ncore\utils\karma.h" />
+    <ClInclude Include="ncore\utils\logging.h" />
+    <ClInclude Include="ncore\utils\period.h" />
+    <ClInclude Include="ncore\utils\pe_file.h" />
+    <ClInclude Include="ncore\utils\scope_handle.h" />
+    <ClInclude Include="ncore\utils\singleton.h" />
+    <ClInclude Include="ncore\utils\sink.h" />
+    <ClInclude Include="ncore\utils\thread_pool.h" />
+    <ClInclude Include="ncore\utils\wow64_helper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ncore\algorithm\cityhash.cpp" />
+    <ClCompile Include="ncore\algorithm\crc.cpp" />
+    <ClCompile Include="ncore\algorithm\hash.cpp" />
+    <ClCompile Include="ncore\algorithm\md5.cpp" />
+    <ClCompile Include="ncore\algorithm\sha1.cpp" />
+    <ClCompile Include="ncore\base\atomic_windows_imp.cpp" />
+    <ClCompile Include="ncore\base\buffer.cpp" />
+    <ClCompile Include="ncore\base\datetime.cpp" />
+    <ClCompile Include="ncore\base\exception.cpp" />
+    <ClCompile Include="ncore\base\stream.cpp" />
+    <ClCompile Include="ncore\base\timespan.cpp" />
+    <ClCompile Include="ncore\encoding\base64.cpp" />
+    <ClCompile Include="ncore\encoding\utf8.cpp" />
+    <ClCompile Include="ncore\sys\application_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\async_context.cpp" />
+    <ClCompile Include="ncore\sys\background_thread.cpp" />
+    <ClCompile Include="ncore\sys\directory_async_event_args.cpp" />
+    <ClCompile Include="ncore\sys\directory_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\named_event_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\file_mapping_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\file_stream_async_event_args.cpp" />
+    <ClCompile Include="ncore\sys\file_stream_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\path_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\ip_address.cpp" />
+    <ClCompile Include="ncore\sys\ip_endpoint.cpp" />
+    <ClCompile Include="ncore\sys\message_loop.cpp" />
+    <ClCompile Include="ncore\sys\mutex_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\named_pipe_async_event_args.cpp" />
+    <ClCompile Include="ncore\sys\named_pipe_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\options_parser.cpp" />
+    <ClCompile Include="ncore\sys\proactor_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\registry_win_imp.cpp" />
+    <ClCompile Include="ncore\sys\semaphore_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\socket_async_event_args.cpp" />
+    <ClCompile Include="ncore\sys\socket_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\spin_lock.cpp" />
+    <ClCompile Include="ncore\sys\stop_watch.cpp" />
+    <ClCompile Include="ncore\sys\sys_info_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\thread_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\timer_windows_imp.cpp" />
+    <ClCompile Include="ncore\sys\wait.cpp" />
+    <ClCompile Include="ncore\utils\bitconverter.cpp" />
+    <ClCompile Include="ncore\utils\karma.cpp" />
+    <ClCompile Include="ncore\utils\logging.cpp" />
+    <ClCompile Include="ncore\utils\pe_file.cpp" />
+    <ClCompile Include="ncore\utils\sink.cpp" />
+    <ClCompile Include="ncore\utils\thread_pool.cpp" />
+    <ClCompile Include="ncore\utils\wow64_helper.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4E2AA223-399C-4386-9DEE-FCEF2CAAADFF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ncore</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>build\ncore\$(Configuration)\</IntDir>
+    <OutDir>out\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IntDir>build\ncore\$(Configuration)\</IntDir>
+    <OutDir>out\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

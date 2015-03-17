@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="base">
+      <UniqueIdentifier>{7ac94cec-4460-4440-aa37-4c1a4ace72ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="algorithm">
+      <UniqueIdentifier>{3282acbd-72ec-4625-8800-ba8f82ac6d33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="encoding">
+      <UniqueIdentifier>{6545c8c3-edc9-4ebf-beef-f32805281441}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sys">
+      <UniqueIdentifier>{a3ebc6ac-6150-4052-aa93-7c5ac00ad806}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utils">
+      <UniqueIdentifier>{35ce49c5-5671-4d5a-9a0b-409b42c524bf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ncore\base\stream.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\base\timespan.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\base\atomic.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\base\buffer.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\base\datetime.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\base\exception.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\algorithm\hash.h">
+      <Filter>algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\algorithm\md5.h">
+      <Filter>algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\algorithm\sha1.h">
+      <Filter>algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\algorithm\cityhash.h">
+      <Filter>algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\algorithm\crc.h">
+      <Filter>algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\handle_pool.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\handy.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\invoker.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\job.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\karma.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\logging.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\pe_file.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\period.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\scope_handle.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\singleton.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\sink.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\thread_pool.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\wow64_helper.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\bitconverter.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\encoding\utf8.h">
+      <Filter>encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\encoding\base64.h">
+      <Filter>encoding</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\directory_async_event_args.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\file_mapping.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\file_stream.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\file_stream_async_event_args.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\io_portal.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\ip_address.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\ip_endpoint.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\message_loop.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\mutex.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\named_pipe.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\named_pipe_async_event_args.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\options_parser.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\proactor.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\registry.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\semaphore.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\socket.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\socket_async_event_args.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\spin_lock.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\stop_watch.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\sys_info.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\thread.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\timer.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\wait.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\wait_exception.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\waitable.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\application.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\background_thread.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\directory.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\base\object.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\named_event.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\async_context.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\async_result_handler.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\async_result_delegate.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\async_result_adapter.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\ncore.h" />
+    <ClInclude Include="ncore\sys\path.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\file_define.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\pipe_define.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\sys\network_define.h">
+      <Filter>sys</Filter>
+    </ClInclude>
+    <ClInclude Include="ncore\utils\bitwise_enum.h">
+      <Filter>utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ncore\base\atomic_windows_imp.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\base\buffer.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\base\datetime.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\base\exception.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\base\stream.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\base\timespan.cpp">
+      <Filter>base</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\algorithm\hash.cpp">
+      <Filter>algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\algorithm\md5.cpp">
+      <Filter>algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\algorithm\sha1.cpp">
+      <Filter>algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\algorithm\cityhash.cpp">
+      <Filter>algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\algorithm\crc.cpp">
+      <Filter>algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\utils\karma.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\utils\logging.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\utils\pe_file.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\utils\sink.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\utils\thread_pool.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\utils\wow64_helper.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\utils\bitconverter.cpp">
+      <Filter>utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\encoding\base64.cpp">
+      <Filter>encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\encoding\utf8.cpp">
+      <Filter>encoding</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\directory_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\file_mapping_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\file_stream_async_event_args.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\file_stream_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\ip_address.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\ip_endpoint.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\message_loop.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\mutex_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\named_pipe_async_event_args.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\named_pipe_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\options_parser.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\proactor_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\registry_win_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\semaphore_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\socket_async_event_args.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\socket_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\spin_lock.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\stop_watch.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\sys_info_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\thread_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\timer_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\wait.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\application_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\background_thread.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\directory_async_event_args.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\named_event_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\async_context.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+    <ClCompile Include="ncore\sys\path_windows_imp.cpp">
+      <Filter>sys</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
