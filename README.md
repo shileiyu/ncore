@@ -1,2 +1,2 @@
 # ncore
-Application Cornerstone
+Application cornerstone.
