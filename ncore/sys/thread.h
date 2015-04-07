@@ -56,10 +56,10 @@ class ThreadExceptionAbort : public Exception
 {
 };
 
-
 //线程类
 class Thread : public NonCopyableObject
 {
+    friend class MainThread;
 private:
     enum ThreadExitCode
     {
@@ -80,6 +80,9 @@ private:
 public:
     static uint32_t GetCurrentThreadId();
     static void Sleep(int ms, bool alertable);
+    static Thread * Current();
+    static Thread * Main();
+
 public:
     Thread();
     virtual ~Thread();

@@ -4,6 +4,32 @@
 namespace ncore
 {
 
+__declspec(thread) Thread * current = 0;
+
+class MainThread
+{
+public:
+    MainThread() 
+    {
+        thread_.thread_handle_ = (uintptr_t)GetCurrentThread();
+        thread_.thread_id_ = GetCurrentThreadId();
+        thread_.started_ = true;
+        current = &thread_;
+
+    }
+
+    ~MainThread()
+    {
+        //avoid stuck in Thread::fini().
+        thread_.thread_handle_ = 0;
+    }
+
+    Thread thread_;
+};
+
+MainThread main;
+
+
 
 uint32_t _stdcall Thread::Run(void * param)
 {
@@ -40,6 +66,16 @@ uint32_t Thread::GetCurrentThreadId()
     return ::GetCurrentThreadId();
 }
 
+Thread * Thread::Current()
+{
+    return current;
+}
+
+Thread * Thread::Main()
+{
+    return &main.thread_;
+}
+
 Thread::Thread()
     : thread_proc_(0),
       thread_handle_(0),
@@ -66,6 +102,7 @@ bool Thread::init(ThreadProc & thread_proc)
     if(thread_handle_ == 0)
         return false;
 
+    current = this;
     return true;
 }
 
@@ -77,16 +114,13 @@ void Thread::fini()
         CloseHandle((HANDLE)thread_handle_);
         thread_handle_ = 0;
     }
-    if(thread_proc_ != 0)
-    {
-        thread_proc_ = 0;
-    }
+    thread_id_ = 0;
+    thread_proc_ = 0;
+    current = 0;
 }
 
 bool Thread::Start()
 {
-    assert(thread_proc_ != 0);
-
     if(thread_handle_)
     {
         HANDLE handle = (HANDLE)thread_handle_;
