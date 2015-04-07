@@ -1,49 +1,52 @@
-﻿#include "message_loop.h"
+﻿#include "spin_lock.h"
+#include "message_loop.h"
 
 namespace ncore
 {
 
+class MessageLoopRegistry
+{
+public:
+    MessageLoopRegistry() {}
+
+    ~MessageLoopRegistry() 
+    {
+        for(auto item = loops_.begin(); item != loops_.end(); ++item) 
+        {
+            MessageLoop * loop = *item;
+            delete loop;
+        }
+        loops_.clear();
+    }
+    void Register(MessageLoop * loop) 
+    {
+        lock_.Acquire();
+        loops_.insert(loop);
+        lock_.Release();
+    }
+private:
+    SpinLock lock_;
+    std::set<MessageLoop *> loops_;
+};
+
+MessageLoopRegistry registry;
+__declspec(thread) MessageLoop * current = nullptr;
+
 MessageLoop * MessageLoop::Current()
 {
-    const size_t kTopStack = 4;
-    MessageLoop * cur_loop = 0;
-#ifdef NCORE_X86
-    auto stack_top = reinterpret_cast<void **>(__readfsdword(4));
-    if(stack_top)
-    {
-        cur_loop = reinterpret_cast<MessageLoop *>(*(--stack_top));
-    }
-#endif
-    return cur_loop;
-}
-
-void MessageLoop::SetCurrent(MessageLoop * loop)
-{
-    const size_t kTopStack = 4;
-    MessageLoop * cur_loop = 0;
-#ifdef NCORE_X86
-    auto stack_top = reinterpret_cast<void **>(__readfsdword(4));
-    if(stack_top)
-    {
-        *(--stack_top) = loop;
-    }
-#endif
-    return;
+    if(current == nullptr)
+        if(current = new MessageLoop())
+            registry.Register(current);
+    return current;
 }
 
 MessageLoop::MessageLoop() 
-    : depth_(0), idle_tick_(0), timeout_(15), dummy_handle_(0)
+    : depth_(0), idle_tick_(0), timeout_(15)
 {
-    dummy_handle_ = CreateEvent(0, FALSE, FALSE, 0);
 }
 
 MessageLoop::~MessageLoop()
 {
-    if(dummy_handle_)
-    {
-        ::CloseHandle(dummy_handle_);
-        dummy_handle_ = 0;
-    }
     observers_.clear();
 }
 
@@ -61,18 +64,6 @@ int MessageLoop::Run(bool alertable)
 void MessageLoop::Exit(int code)
 {
     ::PostQuitMessage(code);
-}
-
-void MessageLoop::ForceCreate()
-{
-    auto loop = Current();
-    if(!loop)
-    {
-        SetCurrent(this);
-    }
-    MSG msg = {0};
-    ::PeekMessage(&msg, 0, WM_USER, WM_USER, PM_NOREMOVE);
-    return;
 }
 
 void MessageLoop::Purge()
@@ -99,14 +90,6 @@ int MessageLoop::Run(bool alertable, const bool & stop_signal)
     uint32_t exit_code = 0;
     bool condition = true;
 
-    if(dummy_handle_ == 0)
-        return 0xBADBADBA;
-
-    if(depth_ == 0)
-    {
-        SetCurrent(this);
-    }
-
     ++depth_;
 
     do
@@ -130,8 +113,6 @@ int MessageLoop::Run(bool alertable, const bool & stop_signal)
 
     if(depth_ == 0)
     {
-        //clean magic pointer
-        SetCurrent(0);
         //clean message queue
         Purge();
     }
@@ -156,19 +137,20 @@ void MessageLoop::SetTimeout(uint32_t timeout)
 
 bool MessageLoop::Wait(uint32_t time_out, bool alertable)
 {
-    DWORD wait_flag = MWMO_INPUTAVAILABLE;
+    DWORD wait_flag = MWMO_INPUTAVAILABLE | MWMO_WAITALL;
     if(alertable)
         wait_flag |= MWMO_ALERTABLE;
 
     DWORD wait_result = 0;
-    wait_result = MsgWaitForMultipleObjectsEx(1, &dummy_handle_, time_out,
+    HANDLE dummy_handle = 0;
+    wait_result = MsgWaitForMultipleObjectsEx(0, &dummy_handle, time_out,
                                               QS_ALLINPUT, wait_flag);
     switch(wait_result)
     {
     case WAIT_TIMEOUT:
         return false;
     case WAIT_IO_COMPLETION:
-    case WAIT_OBJECT_0 + 1:
+    case WAIT_OBJECT_0:
         return true;
     default:
         assert(0);

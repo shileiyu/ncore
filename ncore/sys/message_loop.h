@@ -1,7 +1,6 @@
 ﻿#ifndef NCORE_SYS_MESSAEG_LOOP_H_
 #define NCORE_SYS_MESSAEG_LOOP_H_
 
-
 #include <ncore/ncore.h>
 
 namespace ncore
@@ -9,10 +8,10 @@ namespace ncore
 
 class MessageLoop
 {
+    friend class MessageLoopRegistry;
 public:
     static MessageLoop * Current();
-private:
-    static void SetCurrent(MessageLoop * loop);
+
 public:
     class Observer
     {
@@ -22,15 +21,10 @@ public:
     };
 
 public:
-    MessageLoop();
-    ~MessageLoop();
-
     int Run();
     int Run(bool alertable);
     int Run(bool alertable, const bool & stop_signal);
     void Exit(int code);
-    //build up stack pointer
-    void ForceCreate();
     //make queue empty
     void Purge();
 
@@ -40,6 +34,9 @@ public:
     uint32_t IdleTick() const;
     void SetTimeout(uint32_t timeout);
 private:
+    MessageLoop();
+    ~MessageLoop();
+    void SetThreadHandle(void * handle);
     bool Wait(uint32_t time_out, bool alertable);
     bool IsExitting(uint32_t & exit_code);
     void RunOnce();
@@ -49,7 +46,6 @@ private:
     uint32_t idle_tick_;
     uint32_t timeout_;
     std::set<Observer*> observers_;
-    void * dummy_handle_;
 };
 
 }
