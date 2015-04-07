@@ -5,13 +5,14 @@ namespace ncore
 {
 
 __declspec(thread) Thread * current = 0;
+static uintptr_t kPesudo = (uintptr_t)::GetCurrentThread();
 
 class MainThread
 {
 public:
     MainThread() 
     {
-        thread_.thread_handle_ = (uintptr_t)GetCurrentThread();
+        thread_.thread_handle_ = kPesudo;
         thread_.thread_id_ = GetCurrentThreadId();
         thread_.started_ = true;
         current = &thread_;
@@ -20,8 +21,6 @@ public:
 
     ~MainThread()
     {
-        //avoid stuck in Thread::fini().
-        thread_.thread_handle_ = 0;
     }
 
     Thread thread_;
@@ -108,7 +107,7 @@ bool Thread::init(ThreadProc & thread_proc)
 
 void Thread::fini()
 {
-    if(thread_handle_ != 0)
+    if(thread_handle_ != 0 && thread_handle_ != kPesudo)
     {
         Join();
         CloseHandle((HANDLE)thread_handle_);
